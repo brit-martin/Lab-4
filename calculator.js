@@ -34,7 +34,7 @@ function calculate(expression){
       alert("that is not a number")
       return
     }
-  } if (tokens.length === 2){
+  } else if (tokens.length === 2){
     operator = tokens[0]
     num1 = tokens[1]
   } if (isNaN(num1)){
@@ -42,18 +42,20 @@ function calculate(expression){
     return
   }
  
-  if (tokens[1] === "+"){
+  if (operator === "+"){
     return(add(num1, num2))
-  } else if (tokens[1] === "-"){
+  } else if (operator === "-"){
     return(sub(num1, num2))
-  } else if (tokens[1] === "*"){
+  } else if (operator === "*"){
     return(multiply(num1, num2))
-  } else if (tokens[1] === "/"){
+  } else if (operator === "/"){
     return(divide(num1, num2))
-  } else if (tokens[1] === "**"){
+  } else if (operator === "^"){
     return(power(num1, num2))
-  } else if (tokens[1] === "%"){
+  } else if (operator === "%"){
     return(remainder(num1, num2))
+  } else if (operator === "sqrt"){
+    return(squareroot(num1))
   }
 
 
